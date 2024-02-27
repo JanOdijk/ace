@@ -18,7 +18,7 @@ issued on a command line in the folder where PATH is the path that contains the 
 It is best to run the program from the same location each time. Do not copy the program to other locations. If the files to be checked are not in the folder where the program resides indicate the location of the  files to be checked by the -p  parameter.
 
 The following errors and warnings are distinguished:
-- serious errors: errors caused by a violation of formal requirements on Alpino structures. If a serious erro is encountered, no further check on errors is possibe, so the serious erros in a file should be resoved first, and then ace should be run again.
+- serious errors: errors caused by a violation of formal requirements on Alpino structures. If a serious error is encountered, no further check on errors is possibe, so the serious erros in a file should be resoved first, and then ace should be run again.
 - errors: configurations in the syntactic structure that ace considers incorrect, mostly for linguistic reasons
 - likely errors: configurations in the syntactic structure that ace considers likely to be incorrect
 - warnings: configurations in the syntactic structure that are below a certain threshold, based on statistics derived from the manually verified Lassy-Small and CGN treebanks  
