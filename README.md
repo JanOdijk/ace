@@ -99,7 +99,7 @@ Ace makes use of some functions from the sastadev package. This package can be i
 
 pip install sastadev
 
-and it makes use of several packages that are included in stadard python installations.
+and it makes use of several packages that are included in standard python installations.
 
 ## History
 This tool was developed and used in the Utrecht University AnnCor project in which the automatically generated Alpino syntactic structures were manually checked and if needed corrected.
