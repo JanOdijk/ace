@@ -58,7 +58,48 @@ The .fl files only contain entries for errors not marked, so that there is a cor
 
 ## Filelists
 
-ACE generates multiple filelists, one for each error type, and a filelist with all errors and warnings. Seeparate filelists files are created because it  is usually wisest to first work on the serious errors reported, then on the errors, and only after that on the likely errors and warnings. 
+ACE generates multiple filelists, one for each error type, and a filelist with all errors and warnings. Separate filelists files are created because it  is usually wisest to first work on the serious errors reported, then on the errors, and only after that on the likely errors and warnings. 
+
+The filelists generated contain an absolute path for the location of the files. This may differ per user or annotator if the work is done on separate copies of the files.
+
+One can distribute the files to be reconsidered over multiple annotators and multiple filelists per annotator by the script mkfl.py
+
+This is the help of this script:
+
+```commandline
+Usage: mkfl.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -f INLISTFILENAME, --file=INLISTFILENAME
+                        filename of the input filelist
+  -a ANNOTATORS, --ann=ANNOTATORS
+                        annotator names separated by :,e.g. max:lieke
+  -p PROPORTIONS, --prop=PROPORTIONS
+                        proportion per annotator separated by :,e.g. 1:2
+  -l FILESPERFILELIST, --len=FILESPERFILELIST
+                        default length of filelists
+```
+
+This script makes use of a tab separated value file called 'userpathmappingfile.txt' with rows of annotator name and rootpath of that annotator. 
+An example file is included.  It has to be adapted to the local situation.
+
+For example
+
+```
+python mkfl.py -f errors_20240227T132326_allerrors.fl -a max:lieke -p 1:1 -l 5
+```
+
+distributes the files mentioned in the input file list over the users max and lieke equally (proportion 1:1) and each new filelist has maximally 5 filenames in it
+
+The default for FILESPERFILELIST is 100.
+The default for PROPORTIONS is equal distribution. 
+
+So in most cases it is sufficient to use: 
+
+```
+python mkfl.py -f errors_20240227T132326_allerrors.fl -a max:lieke
+```
 
 
 ## Options
